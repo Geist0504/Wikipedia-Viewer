@@ -1,0 +1,13 @@
+wikipedia viewer Things to do 
+
+Formatting
+	Search bar persistance  -- CHECK
+	Search bar pop to top on search --CHECK
+		Question mark disappear on search --CHECk
+
+
+Viewers:
+	Use animate and hidden property to make them grow and be populated once the things load
+	Stylize hovers over them
+
+		Animate.CSS!!!

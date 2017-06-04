@@ -1,0 +1,155 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  min-width: 1300px;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/*
+  ========================================
+  Body
+  ========================================
+*/
+
+body{
+  background-color: #29374f;
+  min-height: 100%;
+  height: 700px;
+}
+
+.icon{
+  text-align: center;
+  position: relative;
+  top: 270px;
+}
+
+.fa{
+  border-radius: 20px;
+  height:20px;
+  color: orange;
+  margin-bottom:70px;
+}
+
+.fa:hover{
+  cursor: pointer;
+}
+
+.lucky{
+  display: inline-block;
+  padding: 10px;
+  background-color: transparent;
+  border: 3px solid orange;
+  border-radius: 10px;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.lucky:hover{
+  background-color: rgba(200,200,200,0.4);
+  cursor: pointer;
+}
+
+/*
+  ========================================
+  Search
+  ========================================
+*/
+
+.search{
+  text-align: center;
+  display: none;
+}
+
+.search > form{
+  position: relative;
+}
+
+.searchForm input{
+  background-color: transparent;
+  border: 5px solid orange;
+  border-radius: 20px;
+  height:20px;
+  color: white;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.searchForm input:focus{
+  outline: none;
+}
+
+/*
+  ========================================
+  Preview Windows
+  ========================================
+*/
+
+.previews{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.preview{
+  display: block;
+  width: 80%;
+  height: 100%;
+  min-height: 50px;
+  min-width: 400px;
+  margin-left: 10%;
+  background-color: grey;
+  text-decoration: none;
+  color: black; 
+}
+
+.previews a:hover{
+  cursor: pointer;
+  border-left: solid orange;
+  border-left-width: 6px;
+  margin-left: calc(10% - 6px);
+}
