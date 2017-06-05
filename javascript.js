@@ -14,6 +14,7 @@ $('document').ready(function() {
   $('.searchForm').submit(function(event){
     event.preventDefault();
     var topic = $('.searchInput').val();
+    $('.preview').addClass('animated fadeInLeft');
     postSubmit();
     var wiki = getWiki(topic);
     wiki.done(function(obj){
@@ -29,15 +30,6 @@ $('document').ready(function() {
       }, 'fast');
     }
   });*/
-
-  $('.test').click(function(){
-    var wiki = getWiki('New York');
-    wiki.done(function(obj){
-      console.log(obj);
-      var [ , titles, content, urls] = obj;
-      console.log(titles);
-    });
-  });
 });
 
 
