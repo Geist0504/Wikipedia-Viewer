@@ -157,6 +157,7 @@ body{
   background-color: #bababa;
   text-decoration: none;
   color: black; 
+  margin-bottom: 20px;
 }
 
 .previews a:hover{

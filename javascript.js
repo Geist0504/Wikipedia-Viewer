@@ -18,18 +18,9 @@ $('document').ready(function() {
     postSubmit();
     var wiki = getWiki(topic);
     wiki.done(function(obj){
-      var [ , titles, content, urls] = obj;
-      console.log(titles);
+      addWiki(obj);
     });
   });
-  /*$('.fa-search').mouseout(function() {
-    if(!$('input').is(":focus")){
-      $('input').stop().animate({
-        width: '0px',
-        borderWidth: '0',
-      }, 'fast');
-    }
-  });*/
 });
 
 
@@ -56,3 +47,37 @@ function getWiki(topic){
         headers: { 'Api-User-Agent': 'Andrew amg877@aol.com' }
     });
 }
+
+function addWiki(obj){
+  var [ , titles, content, urls] = obj;
+  var i = 0;
+  var timer = setInterval(function(){
+    if (i < titles.length){
+      console.log(titles[i]);
+      $('.previews').append('<a class="preview animated fadeInLeft" href="nothing"><h2></h2><p></p></a>');
+      $('.previews a:last-child').attr('href',urls[i]);
+      $('.previews a:last-child > h2').text(titles[i]);
+      $('.previews a:last-child > p').text(content[i]);
+      i++;
+      }
+      else{
+        clearInterval(timer);
+      }
+    }, 500);
+}
+
+fun
+
+
+/*function addWiki(obj){
+  var [ , titles, content, urls] = obj;
+  for(let i = 0; i<titles.length; i++){
+    setTimeout(function(){
+      console.log(titles[i]);
+      $('.previews').append('<a class="preview animated fadeInLeft" href="nothing"><h2></h2><p></p></a>');
+      $('.previews a:last-child').attr('href',urls[i]);
+      $('.previews a:last-child > h2').text(titles[i]);
+      $('.previews a:last-child > p').text(content[i]);
+    },500);
+  }
+} */
