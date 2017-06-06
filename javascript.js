@@ -12,11 +12,13 @@ $('document').ready(function() {
   });
 
   $('.searchForm').submit(function(event){
-    event.preventDefault();
+    if (!event.isDefaultPrevented()){
+      event.preventDefault();
+    };
     var topic = $('.searchInput').val();
-    $('.preview').addClass('animated fadeInLeft');
-    postSubmit();
+    newSearch(topic);
     var wiki = getWiki(topic);
+    postSubmit();
     wiki.done(function(obj){
       addWiki(obj);
     });
@@ -53,7 +55,6 @@ function addWiki(obj){
   var i = 0;
   var timer = setInterval(function(){
     if (i < titles.length){
-      console.log(titles[i]);
       $('.previews').append('<a class="preview animated fadeInLeft" href="nothing"><h2></h2><p></p></a>');
       $('.previews a:last-child').attr('href',urls[i]);
       $('.previews a:last-child > h2').text(titles[i]);
@@ -66,7 +67,12 @@ function addWiki(obj){
     }, 500);
 }
 
-fun
+function newSearch(topic){
+  $('.searchForm').remove();          //remove search form
+  $('.search').append('<form class="searchForm" type="submit"></form>');
+  $('.searchForm').append('<input class="searchInput" type="text" name="search" placeholder='+topic+'>');
+  $('.searchForm').attr('id', 'second');
+}
 
 
 /*function addWiki(obj){
