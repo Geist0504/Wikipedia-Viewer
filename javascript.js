@@ -67,8 +67,3 @@ function addWiki(obj){
     }, 500);
 }
 
-function newSearch(topic){
-  $('.searchIn').remove();
-  $('.search').append('<input class="searchInput" type="text" name="search" placeholder='+topic+'>');
-}
-
