@@ -11,17 +11,17 @@ $('document').ready(function() {
     changeIcon();
   });
 
-  $('.searchForm').submit(function(event){
-    if (!event.isDefaultPrevented()){
-      event.preventDefault();
-    };
-    var topic = $('.searchInput').val();
-    newSearch(topic);
-    var wiki = getWiki(topic);
-    postSubmit();
-    wiki.done(function(obj){
+  $('.searchInput').keypress(function(e) {
+    if(e.which == 13) {
+      var count = $('.previews a').length;
+      (count > 0) ? $('.preview').remove() : 0;
+      var topic = $('.searchInput').val();
+      var wiki = getWiki(topic);
+      postSubmit();
+      wiki.done(function(obj){
       addWiki(obj);
     });
+    }
   });
 });
 
@@ -55,7 +55,7 @@ function addWiki(obj){
   var i = 0;
   var timer = setInterval(function(){
     if (i < titles.length){
-      $('.previews').append('<a class="preview animated fadeInLeft" href="nothing"><h2></h2><p></p></a>');
+      $('.previews').append('<a class="preview animated fadeInLeft" href="nothing" target="_blank"><h2></h2><p></p></a>');
       $('.previews a:last-child').attr('href',urls[i]);
       $('.previews a:last-child > h2').text(titles[i]);
       $('.previews a:last-child > p').text(content[i]);
@@ -68,22 +68,7 @@ function addWiki(obj){
 }
 
 function newSearch(topic){
-  $('.searchForm').remove();          //remove search form
-  $('.search').append('<form class="searchForm" type="submit"></form>');
-  $('.searchForm').append('<input class="searchInput" type="text" name="search" placeholder='+topic+'>');
-  $('.searchForm').attr('id', 'second');
+  $('.searchIn').remove();
+  $('.search').append('<input class="searchInput" type="text" name="search" placeholder='+topic+'>');
 }
 
-
-/*function addWiki(obj){
-  var [ , titles, content, urls] = obj;
-  for(let i = 0; i<titles.length; i++){
-    setTimeout(function(){
-      console.log(titles[i]);
-      $('.previews').append('<a class="preview animated fadeInLeft" href="nothing"><h2></h2><p></p></a>');
-      $('.previews a:last-child').attr('href',urls[i]);
-      $('.previews a:last-child > h2').text(titles[i]);
-      $('.previews a:last-child > p').text(content[i]);
-    },500);
-  }
-} */
