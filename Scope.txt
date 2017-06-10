@@ -7,7 +7,10 @@ Formatting
 
 
 Viewers:
+	
+	Style boxes -- CHECK
+
 	Use animate and hidden property to make them grow and be populated once the things load
-	Stylize hovers over them
+	Stylize hovers over them  ---CHECK
 
 		Animate.CSS!!!
