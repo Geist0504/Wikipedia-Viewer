@@ -52,6 +52,8 @@ function getWiki(topic){
 
 function addWiki(obj){
   var [ , titles, content, urls] = obj;
+  console.log(titles);
+  console.log(obj);
   var i = 0;
   var timer = setInterval(function(){
     if (i < titles.length){
